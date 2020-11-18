@@ -3,7 +3,8 @@ import os
 import getpass
 import menu_awscli as aws
 import hadoop as hp
-import docker as dk
+import linux as lx
+import docker as dr
 
 
 def login():
@@ -27,7 +28,7 @@ while True:
 			os.system("tput setaf 6")
 			print("""
 				\n
-				Press 1 :  RHEL 8 O.S. 
+				Press 1 :  RHEL8 O.S. 
 				Press 2 :  AWS 
 				Press 3 :  Hadoop
 				Press 4 :  Docker
@@ -38,13 +39,13 @@ while True:
 			main = input("Enter your choice: ")
 
 			if int(main) == 1:
-				print('Linux')
+				lx.contol_menu()
 			elif int(main) == 2:
 				aws.aws_login()
 			elif int(main)==3:
 				hp.menu()
 			elif int(main)==4:
-				dk.local()
+				dr.local()
 			elif int(main)==0:
 				exit()
 			else:
